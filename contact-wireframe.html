@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktai - Gruzijos Pasaulis</title>
+    <meta name="description" content="Susisiekite su Gruzijos meno ir skonio namais Kaune. Rezervuokite vietą mokymams ir vakarienėms. Adresas: K. Donelaičio g. 91, Kaunas.">
+    <meta name="keywords" content="kontaktai Kaunas, Gruzijos meno namai, rezervacija, K. Donelaičio g. 91">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Pagrindinis",
+                "item": "https://www.gruzijospasaulis.lt/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Kontaktai",
+                "item": "https://www.gruzijospasaulis.lt/kontaktai"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header (same as homepage) -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Gruzijos Pasaulis</h1>
+                <p>Meno ir skonio namai</p>
+            </div>
+            
+            <ul class="main-nav">
+                <li><a href="/">Pagrindinis</a></li>
+                <li><a href="/apie-mus">Apie mus</a></li>
+                <li class="dropdown">
+                    <a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/kulinariniai-mokymai/grupes">Grupės mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/privatūs">Privatūs mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/kalendorius">Kalendorius</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/degustacines-vakarienes">Degustacinės Vakarienės</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/degustacines-vakarienes/grupes">Grupės vakarienės</a></li>
+                        <li><a href="/degustacines-vakarienes/privatūs">Privatūs renginiai</a></li>
+                        <li><a href="/degustacines-vakarienes/meniu">Meniu</a></li>
+                    </ul>
+                </li>
+                <li><a href="/video-pamokos">Video Pamokos</a></li>
+                <li class="dropdown">
+                    <a href="/menas">Menas</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/menas/menininkai">Menininkai</a></li>
+                        <li><a href="/menas/parodos">Parodos</a></li>
+                        <li><a href="/menas/paveikslai">Paveikslai</a></li>
+                        <li><a href="/menas/tekstile">Namų tekstilė</a></li>
+                    </ul>
+                </li>
+                <li><a href="/blogas">Blogas</a></li>
+                <li class="dropdown active">
+                    <a href="/kontaktai">Kontaktai</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Pagrindinis</a></li>
+                <li>Kontaktai</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="contact-header">
+        <div class="container">
+            <h1>Kontaktai</h1>
+            <p>Susisiekite su mumis ir rezervuokite vietą mokymams ar vakarienėms</p>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Adresas</h3>
+                    <p>K. Donelaičio g. 91<br>Kaunas, Lietuva</p>
+                    <a href="https://maps.google.com/?q=K.+Donelaičio+g.+91,+Kaunas" target="_blank" class="btn btn-outline">Atidaryti žemėlapį</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Telefonas</h3>
+                    <p>+370 618 23103</p>
+                    <a href="tel:+37061823103" class="btn btn-outline">Skambinti</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>El. paštas</h3>
+                    <p>info@gruzijospasaulis.lt</p>
+                    <a href="mailto:info@gruzijospasaulis.lt" class="btn btn-outline">Rašyti</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🕒</div>
+                    <h3>Darbo laikas</h3>
+                    <p>Pirmadienis - Penktadienis: 10:00 - 18:00<br>
+                    Šeštadienis: 10:00 - 16:00<br>
+                    Sekmadienis: Uždaryta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Susisiekite su mumis</h2>
+                <p>Turite klausimų? Norite rezervuoti vietą? Užpildykite formą ir susisieksime su jumis!</p>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Vardas *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">El. paštas *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefonas</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Paslauga</label>
+                            <select id="service" name="service">
+                                <option value="">Pasirinkite paslaugą</option>
+                                <option value="kulinariniai-mokymai">Kulinariniai Mokymai</option>
+                                <option value="degustacines-vakarienes">Degustacinės Vakarienės</option>
+                                <option value="privatūs-renginiai">Privatūs Renginiai</option>
+                                <option value="video-pamokos">Video Pamokos</option>
+                                <option value="kitas">Kitas</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Žinutė *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Aprašykite savo poreikius ar klausimus..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Noriu gauti naujienlaiškį apie naujus renginius ir pasiūlymus</label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">Sutinku su <a href="/privacy" target="_blank">privatumo politika</a> *</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Siųsti žinutę</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Mūsų vieta</h2>
+            <div class="map-container">
+                <!-- Google Maps embed placeholder -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2294.123456789!2d23.123456789!3d54.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTTCsDA3JzI0LjQiTiAyM8KwMDcnMjQuNCJF!5e0!3m2!1slt!2slt!4v1234567890123!5m2!1slt!2slt"
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Dažniausi klausimai</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Kaip rezervuoti vietą mokymams?</h3>
+                    <p>Vietą galite rezervuoti telefonu +370 618 23103, el. paštu info@gruzijospasaulis.lt arba užpildydami kontaktų formą aukščiau.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Ar galima atšaukti rezervaciją?</h3>
+                    <p>Taip, rezervaciją galima atšaukti iki 24 valandų prieš renginį. Atšaukus vėliau, mokestis negrąžinamas.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Kiek žmonių gali dalyvauti grupės mokymuose?</h3>
+                    <p>Grupės mokymuose gali dalyvauti iki 8 žmonių, privatūs mokymai - iki 6 žmonių.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Ar visi ingredientai įskaičiuoti į kainą?</h3>
+                    <p>Taip, visi ingredientai, receptų lapai ir apranga įskaičiuoti į mokymų kainą.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Ar galima organizuoti privataus renginius?</h3>
+                    <p>Taip, organizuojame privataus renginius šeimoms, draugų grupėms ir įmonėms. Susisiekite dėl detalių.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Kokie mokėjimo būdai priimami?</h3>
+                    <p>Priimame grynuosius, banko pavedimus ir kortelių mokėjimus. Mokėjimas vyksta renginio metu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Sekite mus socialiniuose tinkluose</h2>
+            <p>Gaukite naujienas apie renginius, receptus ir Gruzijos kultūrą</p>
+            <div class="social-links">
+                <a href="[FACEBOOK_URL]" class="social-link facebook" target="_blank" rel="noopener">
+                    <span class="social-icon">📘</span>
+                    <span class="social-text">Facebook</span>
+                </a>
+                <a href="[INSTAGRAM_URL]" class="social-link instagram" target="_blank" rel="noopener">
+                    <span class="social-icon">📷</span>
+                    <span class="social-text">Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as homepage) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruzijos Pasaulis</h3>
+                    <p>Meno ir skonio namai Kaune</p>
+                    <div class="social-links">
+                        <a href="[FACEBOOK_URL]" aria-label="Facebook">📘</a>
+                        <a href="[INSTAGRAM_URL]" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Paslaugos</h4>
+                    <ul>
+                        <li><a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a></li>
+                        <li><a href="/degustacines-vakarienes">Degustacinės Vakarienės</a></li>
+                        <li><a href="/video-pamokos">Video Pamokos</a></li>
+                        <li><a href="/menas">Menas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informacija</h4>
+                    <ul>
+                        <li><a href="/apie-mus">Apie mus</a></li>
+                        <li><a href="/blogas">Blogas</a></li>
+                        <li><a href="/kontaktai">Kontaktai</a></li>
+                        <li><a href="/privacy">Privatumo politika</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontaktai</h4>
+                    <p>K. Donelaičio g. 91<br>Kaunas</p>
+                    <p>+370 618 23103<br>info@gruzijospasaulis.lt</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org LocalBusiness markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Gruzijos Pasaulis",
+        "description": "Gruzijos meno ir skonio namai Kaune",
+        "url": "https://www.gruzijospasaulis.lt",
+        "telephone": "+370 618 23103",
+        "email": "info@gruzijospasaulis.lt",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "K. Donelaičio g. 91",
+            "addressLocality": "Kaunas",
+            "addressCountry": "LT"
+        },
+        "openingHours": [
+            "Mo-Fr 10:00-18:00",
+            "Sa 10:00-16:00"
+        ],
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "54.123456789",
+            "longitude": "23.123456789"
+        },
+        "sameAs": [
+            "[FACEBOOK_URL]",
+            "[INSTAGRAM_URL]"
+        ]
+    }
+    </script>
+</body>
+</html>

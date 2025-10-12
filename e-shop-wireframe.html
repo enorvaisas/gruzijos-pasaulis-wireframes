@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-parduotuvė - Gruzijos Pasaulis</title>
+    <meta name="description" content="Pirkite autentiškus gruzinų prieskonius, tekstilę, paveikslus ir kitus produktus iš Gruzijos. Nemokamas pristatymas Lietuvoje.">
+    <meta name="keywords" content="Gruzijos prieskoniai, gruzinų tekstilė, paveikslai, staltiesės, gruzinų menas">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Pagrindinis",
+                "item": "https://www.gruzijospasaulis.lt/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "E-parduotuvė",
+                "item": "https://www.gruzijospasaulis.lt/parduotuve"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header (same as homepage) -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Gruzijos Pasaulis</h1>
+                <p>Meno ir skonio namai</p>
+            </div>
+            
+            <ul class="main-nav">
+                <li><a href="/">Pagrindinis</a></li>
+                <li><a href="/apie-mus">Apie mus</a></li>
+                <li class="dropdown">
+                    <a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/kulinariniai-mokymai/grupes">Grupės mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/privatūs">Privatūs mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/kalendorius">Kalendorius</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/degustacines-vakarienes">Degustacinės Vakarienės</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/degustacines-vakarienes/grupes">Grupės vakarienės</a></li>
+                        <li><a href="/degustacines-vakarienes/privatūs">Privatūs renginiai</a></li>
+                        <li><a href="/degustacines-vakarienes/meniu">Meniu</a></li>
+                    </ul>
+                </li>
+                <li><a href="/video-pamokos">Video Pamokos</a></li>
+                <li class="dropdown active">
+                    <a href="/menas">Menas</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/menas/menininkai">Menininkai</a></li>
+                        <li><a href="/menas/parodos">Parodos</a></li>
+                        <li><a href="/menas/paveikslai">Paveikslai</a></li>
+                        <li><a href="/menas/tekstile">Namų tekstilė</a></li>
+                    </ul>
+                </li>
+                <li><a href="/blogas">Blogas</a></li>
+                <li><a href="/kontaktai">Kontaktai</a></li>
+            </ul>
+            
+            <!-- Shopping Cart -->
+            <div class="cart-icon">
+                <span class="cart-count">0</span>
+                <a href="/cart" aria-label="Krepšelis">🛒</a>
+            </div>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Pagrindinis</a></li>
+                <li>E-parduotuvė</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1>E-parduotuvė</h1>
+            <p>Autentiški produktai iš Gruzijos</p>
+            
+            <!-- Search and Filters -->
+            <div class="shop-controls">
+                <div class="search-box">
+                    <input type="text" placeholder="Ieškoti produktų..." id="product-search">
+                    <button type="submit">🔍</button>
+                </div>
+                
+                <div class="filters">
+                    <select id="category-filter">
+                        <option value="">Visos kategorijos</option>
+                        <option value="prieskoniai">Prieskoniai</option>
+                        <option value="tekstile">Namų tekstilė</option>
+                        <option value="paveikslai">Paveikslai</option>
+                        <option value="aksesuarai">Aksesuarai</option>
+                        <option value="dovanos">Dovanos</option>
+                    </select>
+                    
+                    <select id="price-filter">
+                        <option value="">Kaina</option>
+                        <option value="0-20">€0 - €20</option>
+                        <option value="20-50">€20 - €50</option>
+                        <option value="50-100">€50 - €100</option>
+                        <option value="100+">€100+</option>
+                    </select>
+                    
+                    <select id="sort-filter">
+                        <option value="popular">Populiariausi</option>
+                        <option value="price-low">Kaina: žemiausia</option>
+                        <option value="price-high">Kaina: aukščiausia</option>
+                        <option value="newest">Naujausi</option>
+                        <option value="name">Pavadinimas A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <div class="container">
+            <h2>Produktų kategorijos</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="[SPICES_IMAGE_PLACEHOLDER]" alt="Gruzijos prieskoniai" loading="lazy">
+                    <h3>Prieskoniai</h3>
+                    <p>Autentiški gruzinų prieskoniai ir mišiniai</p>
+                    <a href="/parduotuve/prieskoniai" class="btn btn-outline">Peržiūrėti</a>
+                </div>
+                
+                <div class="category-card">
+                    <img src="[TEXTILE_IMAGE_PLACEHOLDER]" alt="Namų tekstilė" loading="lazy">
+                    <h3>Namų Tekstilė</h3>
+                    <p>Staltiesės, pagalvių užvalkalai ir kt.</p>
+                    <a href="/parduotuve/tekstile" class="btn btn-outline">Peržiūrėti</a>
+                </div>
+                
+                <div class="category-card">
+                    <img src="[PAINTINGS_IMAGE_PLACEHOLDER]" alt="Paveikslai" loading="lazy">
+                    <h3>Paveikslai</h3>
+                    <p>Gruzijos menininkų darbai</p>
+                    <a href="/parduotuve/paveikslai" class="btn btn-outline">Peržiūrėti</a>
+                </div>
+                
+                <div class="category-card">
+                    <img src="[ACCESSORIES_IMAGE_PLACEHOLDER]" alt="Aksesuarai" loading="lazy">
+                    <h3>Aksesuarai</h3>
+                    <p>Krepšiai, smulkmeninės ir kiti</p>
+                    <a href="/parduotuve/aksesuarai" class="btn btn-outline">Peržiūrėti</a>
+                </div>
+                
+                <div class="category-card">
+                    <img src="[GIFTS_IMAGE_PLACEHOLDER]" alt="Dovanos" loading="lazy">
+                    <h3>Dovanos</h3>
+                    <p>Dovanų kuponai ir komplektai</p>
+                    <a href="/parduotuve/dovanos" class="btn btn-outline">Peržiūrėti</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Populiariausi produktai</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="[PRODUCT_IMAGE_PLACEHOLDER]" alt="Prieskonių mišinys Svanetijos druska" loading="lazy">
+                        <div class="product-badge">Populiarus</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Prieskonių mišinys "Svanetijos druska"</h3>
+                        <p>Autentiškas gruzinų prieskonių mišinys su tradiciniais ingredientais</p>
+                        <div class="product-price">
+                            <span class="current-price">€15.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-product-id="1">Pridėti į krepšelį</button>
+                            <a href="/parduotuve/prieskoniai/svanetijos-druska" class="btn btn-outline">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="[PRODUCT_IMAGE_PLACEHOLDER]" alt="Staltiesė SUPRA mėlyna" loading="lazy">
+                        <div class="product-badge">Naujas</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Staltiesė SUPRA (mėlyna)</h3>
+                        <p>Aukštos kokybės staltiesė su tradiciniu gruzinų raštu</p>
+                        <div class="product-price">
+                            <span class="current-price">€79.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-product-id="2">Pridėti į krepšelį</button>
+                            <a href="/parduotuve/tekstile/staltiese-supra-melyna" class="btn btn-outline">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="[PRODUCT_IMAGE_PLACEHOLDER]" alt="Dovanų kuponas" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dovanų Kuponas</h3>
+                        <p>Padovanokite skonių patirtį - galioja mokymams ir vakarienėms</p>
+                        <div class="product-price">
+                            <span class="current-price">€55.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-product-id="3">Pridėti į krepšelį</button>
+                            <a href="/parduotuve/dovanos/dovanu-kuponas" class="btn btn-outline">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="[PRODUCT_IMAGE_PLACEHOLDER]" alt="Krepšys Aitvaras" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Krepšys "Aitvaras"</h3>
+                        <p>Rankų darbo krepšys su tradiciniu gruzinų raštu</p>
+                        <div class="product-price">
+                            <span class="current-price">€45.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-product-id="4">Pridėti į krepšelį</button>
+                            <a href="/parduotuve/aksesuarai/krepsys-aitvaras" class="btn btn-outline">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="[PRODUCT_IMAGE_PLACEHOLDER]" alt="Prieskoniai Kinza" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Prieskoniai "Kinza"</h3>
+                        <p>Tradicinis gruzinų prieskonių mišinys su koriandru</p>
+                        <div class="product-price">
+                            <span class="current-price">€12.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-product-id="5">Pridėti į krepšelį</button>
+                            <a href="/parduotuve/prieskoniai/kinza" class="btn btn-outline">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="[PRODUCT_IMAGE_PLACEHOLDER]" alt="Pagalvių užvalkalas Pelėdžiukė" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pagalvių užvalkalas "Pelėdžiukė"</h3>
+                        <p>Minkštas veliūrinis užvalkalas su tradiciniu raštu</p>
+                        <div class="product-price">
+                            <span class="current-price">€35.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-product-id="6">Pridėti į krepšelį</button>
+                            <a href="/parduotuve/tekstile/pagalviu-uzvalkalas-peledziuke" class="btn btn-outline">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn btn-outline" id="load-more-products">Rodyti daugiau</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping Info -->
+    <section class="shipping-info">
+        <div class="container">
+            <h2>Pristatymas ir mokėjimas</h2>
+            <div class="shipping-grid">
+                <div class="shipping-item">
+                    <div class="shipping-icon">🚚</div>
+                    <h3>Nemokamas pristatymas</h3>
+                    <p>Nemokamas pristatymas visoje Lietuvoje užsakymams nuo €50</p>
+                </div>
+                
+                <div class="shipping-item">
+                    <div class="shipping-icon">⚡</div>
+                    <h3>Greitas pristatymas</h3>
+                    <p>Pristatome per 1-3 darbo dienas</p>
+                </div>
+                
+                <div class="shipping-item">
+                    <div class="shipping-icon">💳</div>
+                    <h3>Saugus mokėjimas</h3>
+                    <p>Priimame korteles, banko pavedimus ir grynuosius</p>
+                </div>
+                
+                <div class="shipping-item">
+                    <div class="shipping-icon">↩️</div>
+                    <h3>Grąžinimas</h3>
+                    <p>14 dienų prekių grąžinimo garantija</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Prenumeruokite naujienlaiškį</h2>
+            <p>Gaukite informaciją apie naujus produktus ir specialius pasiūlymus</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Jūsų el. pašto adresas" required>
+                <button type="submit" class="btn btn-primary">Prenumeruoti</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (same as homepage) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruzijos Pasaulis</h3>
+                    <p>Meno ir skonio namai Kaune</p>
+                    <div class="social-links">
+                        <a href="[FACEBOOK_URL]" aria-label="Facebook">📘</a>
+                        <a href="[INSTAGRAM_URL]" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Paslaugos</h4>
+                    <ul>
+                        <li><a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a></li>
+                        <li><a href="/degustacines-vakarienes">Degustacinės Vakarienės</a></li>
+                        <li><a href="/video-pamokos">Video Pamokos</a></li>
+                        <li><a href="/menas">Menas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informacija</h4>
+                    <ul>
+                        <li><a href="/apie-mus">Apie mus</a></li>
+                        <li><a href="/blogas">Blogas</a></li>
+                        <li><a href="/kontaktai">Kontaktai</a></li>
+                        <li><a href="/privacy">Privatumo politika</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontaktai</h4>
+                    <p>K. Donelaičio g. 91<br>Kaunas</p>
+                    <p>+370 618 23103<br>info@gruzijospasaulis.lt</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org Product markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Prieskonių mišinys Svanetijos druska",
+        "description": "Autentiškas gruzinų prieskonių mišinys su tradiciniais ingredientais",
+        "offers": {
+            "@type": "Offer",
+            "price": "15.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+        },
+        "brand": {
+            "@type": "Brand",
+            "name": "Gruzijos Pasaulis"
+        }
+    }
+    </script>
+</body>
+</html>

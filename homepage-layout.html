@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruzijos Pasaulis - Pagrindinis</title>
+    <meta name="description" content="Gruzijos meno ir skonio namai Kaune. Kulinariniai mokymai, degustacinės vakarienės, menas ir kultūra.">
+    <meta name="keywords" content="Gruzijos virtuvė, kulinariniai mokymai Kaune, degustacinės vakarienės, Gruzijos kultūra">
+    
+    <style>
+        /* Reset and Base Layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: #f8f9fa;
+        }
+        
+        /* Header Layout */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .logo p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: #666;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu li {
+            list-style: none;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        /* Hero Section Layout */
+        .hero {
+            background: #f8f9fa;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            min-height: 600px;
+        }
+        
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            flex: 1;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        /* Services Grid Layout */
+        .services-overview h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            margin-bottom: 24px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Products Grid Layout */
+        .featured-products h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #333;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .product-info {
+            padding: 24px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .product-info p {
+            margin-bottom: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .product-price {
+            margin-bottom: 20px;
+        }
+        
+        .current-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .product-actions .btn {
+            flex: 1;
+            padding: 12px 16px;
+        }
+        
+        /* Events List Layout */
+        .upcoming-events h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .event-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 24px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .event-date {
+            background: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 100px;
+            margin-right: 24px;
+        }
+        
+        .event-date .day {
+            display: block;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .event-date .month {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        
+        .event-info {
+            flex: 1;
+        }
+        
+        .event-info h3 {
+            margin-bottom: 8px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .event-info p {
+            margin-bottom: 8px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .event-time {
+            color: #666;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        /* About Section Layout */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 24px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        /* Blog Grid Layout */
+        .blog-preview h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .blog-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 24px;
+        }
+        
+        .blog-content h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .blog-content p {
+            margin-bottom: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contact CTA Layout */
+        .contact-cta {
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .contact-cta p {
+            color: #ccc;
+            margin-bottom: 40px;
+            font-size: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #ccc;
+            font-size: 16px;
+        }
+        
+        .contact-item .icon {
+            font-size: 20px;
+        }
+        
+        /* Footer Layout */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background: #555;
+            color: white;
+            text-align: center;
+            line-height: 44px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #666;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 30px;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        /* Button Layout */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        
+        .btn-primary:hover {
+            background: #555;
+            border-color: #555;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #333;
+            border-color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #333;
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #333;
+            border-color: #ddd;
+        }
+        
+        .btn-outline:hover {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-content h2 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .event-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .event-date {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero-content h2 {
+                font-size: 28px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gruzijos Pasaulis",
+        "url": "https://www.gruzijospasaulis.lt",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "K. Donelaičio g. 91",
+            "addressLocality": "Kaunas",
+            "addressCountry": "LT"
+        },
+        "telephone": "+370 618 23103",
+        "email": "info@gruzijospasaulis.lt"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Gruzijos Pasaulis</h1>
+                <p>Meno ir skonio namai</p>
+            </div>
+            
+            <!-- Main Navigation -->
+            <ul class="main-nav">
+                <li><a href="/">Pagrindinis</a></li>
+                <li><a href="/apie-mus">Apie mus</a></li>
+                <li class="dropdown">
+                    <a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/kulinariniai-mokymai/grupes">Grupės mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/privatūs">Privatūs mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/kalendorius">Kalendorius</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/degustacines-vakarienes">Degustacinės Vakarienės</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/degustacines-vakarienes/grupes">Grupės vakarienės</a></li>
+                        <li><a href="/degustacines-vakarienes/privatūs">Privatūs renginiai</a></li>
+                        <li><a href="/degustacines-vakarienes/meniu">Meniu</a></li>
+                    </ul>
+                </li>
+                <li><a href="/video-pamokos">Video Pamokos</a></li>
+                <li class="dropdown">
+                    <a href="/menas">Menas</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/menas/menininkai">Menininkai</a></li>
+                        <li><a href="/menas/parodos">Parodos</a></li>
+                        <li><a href="/menas/paveikslai">Paveikslai</a></li>
+                        <li><a href="/menas/tekstile">Namų tekstilė</a></li>
+                    </ul>
+                </li>
+                <li><a href="/blogas">Blogas</a></li>
+                <li><a href="/kontaktai">Kontaktai</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Sveiki atvykę į Gruzijos meno ir skonio pasaulį</h2>
+                <p>Pažinkite unikalią Gruzijos kultūrą, skonį ir meną Kauno širdyje</p>
+                <div class="hero-buttons">
+                    <a href="/kulinariniai-mokymai" class="btn btn-primary">Kulinariniai Mokymai</a>
+                    <a href="/degustacines-vakarienes" class="btn btn-secondary">Degustacinės Vakarienės</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x450/f8f9fa/333333?text=Gruzijos+Virtuvė" alt="Gruzijos virtuvė ir menas" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview section">
+        <div class="container">
+            <h2>Mūsų paslaugos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">ICON</div>
+                    <h3>Kulinariniai Mokymai</h3>
+                    <p>Išmokite gaminti autentiškus gruzinų patiekalus mūsų virtuvėje</p>
+                    <a href="/kulinariniai-mokymai" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">ICON</div>
+                    <h3>Degustacinės Vakarienės</h3>
+                    <p>Patirkite unikalų gruzinų skonių pasaulį su istorijomis ir tradicijomis</p>
+                    <a href="/degustacines-vakarienes" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">ICON</div>
+                    <h3>Video Pamokos</h3>
+                    <p>Mokykitės gruzinų virtuvės namuose su mūsų online kursais</p>
+                    <a href="/video-pamokos" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">ICON</div>
+                    <h3>Menas ir Kultūra</h3>
+                    <p>Atraskite gruzinų menininkų darbus ir tradicinį tekstilį</p>
+                    <a href="/menas" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products section section-alt">
+        <div class="container">
+            <h2>Populiariausi produktai</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/320x280/e9ecef/666666?text=Gruzijos+Prieskoniai" alt="Gruzijos prieskoniai" loading="lazy">
+                        <div class="product-badge">Populiarus</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Gruzijos Prieskoniai</h3>
+                        <p>Autentiški prieskoniai iš Gruzijos</p>
+                        <div class="product-price">
+                            <span class="current-price">€15.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="/menas/prieskoniai" class="btn btn-primary">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/320x280/e9ecef/666666?text=Staltiesės" alt="Staltiesės" loading="lazy">
+                        <div class="product-badge">Naujas</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Staltiesės</h3>
+                        <p>Tradicinis gruzinų tekstilė</p>
+                        <div class="product-price">
+                            <span class="current-price">€79.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="/menas/tekstile" class="btn btn-primary">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/320x280/e9ecef/666666?text=Dovanų+Kuponas" alt="Dovanų kuponas" loading="lazy">
+                        <div class="product-badge">Dovanos</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dovanų Kuponas</h3>
+                        <p>Padovanokite skonių patirtį</p>
+                        <div class="product-price">
+                            <span class="current-price">€55.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="/menas/dovanos" class="btn btn-primary">Peržiūrėti</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="upcoming-events section">
+        <div class="container">
+            <h2>Artimiausi renginiai</h2>
+            <div class="events-list">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">GRU</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Kulinariniai Mokymai: Chačapuri</h3>
+                        <p>Išmokite gaminti tradicinius gruzinų chačapuri</p>
+                        <span class="event-time">18:00 - 21:00</span>
+                    </div>
+                    <a href="/kulinariniai-mokymai/rezervacija" class="btn btn-primary">Rezervuoti</a>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">GRU</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Degustacinė Vakarienė</h3>
+                        <p>5 tradicinių gruzinų patiekalų degustacija</p>
+                        <span class="event-time">19:00 - 22:00</span>
+                    </div>
+                    <a href="/degustacines-vakarienes/rezervacija" class="btn btn-primary">Rezervuoti</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview section section-alt">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Apie mus</h2>
+                    <p>Gruzijos meno ir skonio namai – kartveliška dvasia alsuojanti vieta pačiame Kauno centre. Čia nosis kutena nuostabūs aromatai, atsiskleidžia unikalūs tradiciniai kartveliški skoniai.</p>
+                    <p>Užėjus jus pasitiks autentiška senamiesčio dvasia ir visad besišypsanti Gruzijos kultūrą Kaune puoselėjanti Kristina.</p>
+                    <a href="/apie-mus" class="btn btn-primary">Sužinoti daugiau</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x450/f8f9fa/333333?text=Kristina+Gruzijos+Kultūra" alt="Kristina - Gruzijos kultūros ambasadorė" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview section">
+        <div class="container">
+            <h2>Naujausi straipsniai</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://via.placeholder.com/380x220/e9ecef/666666?text=Gruzijos+Receptai" alt="Gruzijos receptai" loading="lazy">
+                    <div class="blog-content">
+                        <h3>Gruzijos Virtuvės Abėcėlė</h3>
+                        <p>Sužinokite apie pagrindinius gruzinų virtuvės principus ir tradicijas...</p>
+                        <a href="/blogas/gruzijos-virtuves-abecele" class="read-more">Skaityti daugiau</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <img src="https://via.placeholder.com/380x220/e9ecef/666666?text=Gruzijos+Menas" alt="Gruzijos kultūra" loading="lazy">
+                    <div class="blog-content">
+                        <h3>Gruzijos Meno Istorija</h3>
+                        <p>Atraskite gruzinų menininkų kūrybą ir tradicinį tekstilį...</p>
+                        <a href="/blogas/gruzijos-meno-istorija" class="read-more">Skaityti daugiau</a>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center;">
+                <a href="/blogas" class="btn btn-outline">Visi straipsniai</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta section">
+        <div class="container">
+            <h2>Susisiekite su mumis</h2>
+            <p>Turite klausimų? Norite rezervuoti vietą? Susisiekite!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <span>K. Donelaičio g. 91, Kaunas</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <span>+370 618 23103</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <span>info@gruzijospasaulis.lt</span>
+                </div>
+            </div>
+            <a href="/kontaktai" class="btn btn-primary">Susisiekti</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruzijos Pasaulis</h3>
+                    <p>Meno ir skonio namai Kaune</p>
+                    <div class="social-links">
+                        <a href="[FACEBOOK_URL]" aria-label="Facebook">📘</a>
+                        <a href="[INSTAGRAM_URL]" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Paslaugos</h4>
+                    <ul>
+                        <li><a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a></li>
+                        <li><a href="/degustacines-vakarienes">Degustacinės Vakarienės</a></li>
+                        <li><a href="/video-pamokos">Video Pamokos</a></li>
+                        <li><a href="/menas">Menas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informacija</h4>
+                    <ul>
+                        <li><a href="/apie-mus">Apie mus</a></li>
+                        <li><a href="/blogas">Blogas</a></li>
+                        <li><a href="/kontaktai">Kontaktai</a></li>
+                        <li><a href="/privacy">Privatumo politika</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontaktai</h4>
+                    <p>K. Donelaičio g. 91<br>Kaunas</p>
+                    <p>+370 618 23103<br>info@gruzijospasaulis.lt</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schema.org Event markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Kulinariniai Mokymai: Chačapuri",
+        "startDate": "2024-12-15T18:00",
+        "endDate": "2024-12-15T21:00",
+        "location": {
+            "@type": "Place",
+            "name": "Gruzijos Pasaulis",
+            "address": "K. Donelaičio g. 91, Kaunas"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "55",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+</body>
+</html>

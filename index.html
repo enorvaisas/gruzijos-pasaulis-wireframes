@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruzijos Pasaulis - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .description {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .page-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .page-image {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #666;
+        }
+        
+        .page-info {
+            padding: 24px;
+        }
+        
+        .page-info h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            color: #333;
+        }
+        
+        .page-info p {
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .page-link:hover {
+            background: #555;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .status.completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .footer {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .footer p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .pages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gruzijos Pasaulis</h1>
+            <p class="subtitle">Website Wireframes & Layouts</p>
+            <p class="description">
+                Clean, layout-focused wireframes for the new Gruzijos Pasaulis website. 
+                These are designed for WordPress/Breakdance implementation with proper containers, 
+                margins, paddings, and placeholder images for easy client review.
+            </p>
+        </header>
+        
+        <div class="pages-grid">
+            <div class="page-card">
+                <div class="page-image">🏠</div>
+                <div class="page-info">
+                    <span class="status completed">Completed</span>
+                    <h3>Homepage</h3>
+                    <p>Main landing page with hero section, services overview, featured products, events, and contact CTA.</p>
+                    <a href="homepage-layout.html" class="page-link">View Homepage</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">🛒</div>
+                <div class="page-info">
+                    <span class="status completed">Completed</span>
+                    <h3>E-Shop</h3>
+                    <p>Online store with product categories, search functionality, shopping cart, and checkout process.</p>
+                    <a href="e-shop-layout.html" class="page-link">View E-Shop</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">🍳</div>
+                <div class="page-info">
+                    <span class="status completed">Completed</span>
+                    <h3>Cooking Classes</h3>
+                    <p>Culinary training page with course types, popular dishes, schedule, and instructor information.</p>
+                    <a href="cooking-classes-layout.html" class="page-link">View Cooking Classes</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">📞</div>
+                <div class="page-info">
+                    <span class="status completed">Completed</span>
+                    <h3>Contact</h3>
+                    <p>Contact page with information cards, contact form, map, FAQ section, and social media links.</p>
+                    <a href="contact-layout.html" class="page-link">View Contact</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">ℹ️</div>
+                <div class="page-info">
+                    <span class="status pending">Pending</span>
+                    <h3>About Us</h3>
+                    <p>About page with company story, team information, mission, and values.</p>
+                    <a href="#" class="page-link" style="background: #ccc; cursor: not-allowed;">Coming Soon</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">📝</div>
+                <div class="page-info">
+                    <span class="status pending">Pending</span>
+                    <h3>Blog</h3>
+                    <p>Blog page with article listings, categories, search, and individual post layouts.</p>
+                    <a href="#" class="page-link" style="background: #ccc; cursor: not-allowed;">Coming Soon</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">🍽️</div>
+                <div class="page-info">
+                    <span class="status pending">Pending</span>
+                    <h3>Degustacinės Vakarienės</h3>
+                    <p>Tasting dinners page with menu, booking system, and event information.</p>
+                    <a href="#" class="page-link" style="background: #ccc; cursor: not-allowed;">Coming Soon</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">🎥</div>
+                <div class="page-info">
+                    <span class="status pending">Pending</span>
+                    <h3>Video Pamokos</h3>
+                    <p>Video lessons page with course catalog, streaming interface, and learning materials.</p>
+                    <a href="#" class="page-link" style="background: #ccc; cursor: not-allowed;">Coming Soon</a>
+                </div>
+            </div>
+            
+            <div class="page-card">
+                <div class="page-image">🎨</div>
+                <div class="page-info">
+                    <span class="status pending">Pending</span>
+                    <h3>Menas</h3>
+                    <p>Art gallery page with artist profiles, artwork collections, and exhibition information.</p>
+                    <a href="#" class="page-link" style="background: #ccc; cursor: not-allowed;">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Project Status:</strong> 4 of 9 pages completed</p>
+            <p><strong>Design Focus:</strong> Clean wireframes with proper layout structure</p>
+            <p><strong>Next Steps:</strong> Client review → WordPress/Breakdance implementation</p>
+            <p><a href="website-structure-analysis.md">View Project Analysis</a></p>
+        </div>
+    </div>
+</body>
+</html>

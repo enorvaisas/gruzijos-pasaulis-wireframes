@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulinariniai Mokymai - Gruzijos Pasaulis</title>
+    <meta name="description" content="Išmokite gaminti autentiškus gruzinų patiekalus. Grupės ir privatūs mokymai Kaune. Chačapuri, chinkali, satsivi ir kiti tradiciniai patiekalai.">
+    <meta name="keywords" content="kulinariniai mokymai Kaune, gruzinų virtuvė, chačapuri, chinkali, satsivi, kulinariniai kursai">
+    
+    <style>
+        /* Reset and Base Layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: #f8f9fa;
+        }
+        
+        /* Header Layout */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .logo p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: #666;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu li {
+            list-style: none;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 20px 0;
+        }
+        
+        .breadcrumb ol {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+        
+        .breadcrumb li:not(:last-child)::after {
+            content: '>';
+            margin-left: 10px;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: #333;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .page-header .btn {
+            margin: 0 10px;
+        }
+        
+        /* Course Types */
+        .course-types h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .course-types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .course-type-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .course-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .course-type-card h3 {
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .course-type-card p {
+            margin-bottom: 24px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .course-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .course-features li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        
+        .course-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Popular Dishes */
+        .popular-dishes h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .dish-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .dish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .dish-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .dish-card:hover .dish-image img {
+            transform: scale(1.05);
+        }
+        
+        .dish-info {
+            padding: 24px;
+        }
+        
+        .dish-info h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .dish-info p {
+            margin-bottom: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .dish-difficulty {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f8f9fa;
+            color: #666;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        
+        /* Schedule */
+        .schedule h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .schedule-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .schedule-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .schedule-date {
+            background: #333;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .schedule-date .day {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .schedule-date .month {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        
+        .schedule-info h3 {
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .schedule-info p {
+            margin-bottom: 8px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .schedule-time {
+            color: #666;
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .schedule-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        
+        /* Instructor */
+        .instructor h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .instructor-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .instructor-image {
+            flex: 1;
+        }
+        
+        .instructor-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .instructor-info {
+            flex: 1;
+        }
+        
+        .instructor-info h3 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .instructor-info p {
+            margin-bottom: 16px;
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .instructor-qualifications {
+            list-style: none;
+            margin: 24px 0;
+        }
+        
+        .instructor-qualifications li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        
+        .instructor-qualifications li:last-child {
+            border-bottom: none;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        
+        .cta-section p {
+            color: #ccc;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer Layout */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background: #555;
+            color: white;
+            text-align: center;
+            line-height: 44px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #666;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 30px;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        /* Button Layout */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        
+        .btn-primary:hover {
+            background: #555;
+            border-color: #555;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #333;
+            border-color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #333;
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #333;
+            border-color: #ddd;
+        }
+        
+        .btn-outline:hover {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .course-types-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .instructor-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .dishes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Pagrindinis",
+                "item": "https://www.gruzijospasaulis.lt/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Kulinariniai Mokymai",
+                "item": "https://www.gruzijospasaulis.lt/kulinariniai-mokymai"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Gruzijos Pasaulis</h1>
+                <p>Meno ir skonio namai</p>
+            </div>
+            
+            <!-- Main Navigation -->
+            <ul class="main-nav">
+                <li><a href="/">Pagrindinis</a></li>
+                <li><a href="/apie-mus">Apie mus</a></li>
+                <li class="dropdown">
+                    <a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/kulinariniai-mokymai/grupes">Grupės mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/privatūs">Privatūs mokymai</a></li>
+                        <li><a href="/kulinariniai-mokymai/kalendorius">Kalendorius</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/degustacines-vakarienes">Degustacinės Vakarienės</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/degustacines-vakarienes/grupes">Grupės vakarienės</a></li>
+                        <li><a href="/degustacines-vakarienes/privatūs">Privatūs renginiai</a></li>
+                        <li><a href="/degustacines-vakarienes/meniu">Meniu</a></li>
+                    </ul>
+                </li>
+                <li><a href="/video-pamokos">Video Pamokos</a></li>
+                <li class="dropdown">
+                    <a href="/menas">Menas</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/menas/menininkai">Menininkai</a></li>
+                        <li><a href="/menas/parodos">Parodos</a></li>
+                        <li><a href="/menas/paveikslai">Paveikslai</a></li>
+                        <li><a href="/menas/tekstile">Namų tekstilė</a></li>
+                    </ul>
+                </li>
+                <li><a href="/blogas">Blogas</a></li>
+                <li><a href="/kontaktai">Kontaktai</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Pagrindinis</a></li>
+                <li>Kulinariniai Mokymai</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Kulinariniai Mokymai</h1>
+            <p>Išmokite gaminti autentiškus gruzinų patiekalus</p>
+            <a href="/kulinariniai-mokymai/rezervacija" class="btn btn-primary">Rezervuoti vietą</a>
+            <a href="/kulinariniai-mokymai/kalendorius" class="btn btn-secondary">Žiūrėti kalendorių</a>
+        </div>
+    </section>
+
+    <!-- Course Types -->
+    <section class="course-types section">
+        <div class="container">
+            <h2>Mokymų tipai</h2>
+            <div class="course-types-grid">
+                <div class="course-type-card">
+                    <div class="course-icon">ICON</div>
+                    <h3>Grupės Mokymai</h3>
+                    <p>Mokykitės kartu su kitais entuziastais mūsų virtuvėje</p>
+                    <ul class="course-features">
+                        <li>6-8 dalyvių grupė</li>
+                        <li>3 valandų trukmė</li>
+                        <li>Visi ingredientai įskaičiuoti</li>
+                        <li>Receptų sąsiuvinis</li>
+                    </ul>
+                    <a href="/kulinariniai-mokymai/grupes" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+                
+                <div class="course-type-card">
+                    <div class="course-icon">ICON</div>
+                    <h3>Privatūs Mokymai</h3>
+                    <p>Individualūs mokymai pagal jūsų poreikius</p>
+                    <ul class="course-features">
+                        <li>Asmeninis instruktorius</li>
+                        <li>Lankstus laikas</li>
+                        <li>Individuali programa</li>
+                        <li>Namų vizitas galimas</li>
+                    </ul>
+                    <a href="/kulinariniai-mokymai/privatūs" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Dishes -->
+    <section class="popular-dishes section section-alt">
+        <div class="container">
+            <h2>Populiariausi patiekalai</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://via.placeholder.com/300x200/e9ecef/666666?text=Chačapuri" alt="Chačapuri" loading="lazy">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Chačapuri</h3>
+                        <p>Tradicinis gruzinų duonos kepinys su sūriu</p>
+                        <span class="dish-difficulty">Lengvas</span>
+                    </div>
+                </div>
+                
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://via.placeholder.com/300x200/e9ecef/666666?text=Chinkali" alt="Chinkali" loading="lazy">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Chinkali</h3>
+                        <p>Gruzijos koldūnai su mėsa ir bulvėmis</p>
+                        <span class="dish-difficulty">Vidutinis</span>
+                    </div>
+                </div>
+                
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://via.placeholder.com/300x200/e9ecef/666666?text=Satsivi" alt="Satsivi" loading="lazy">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Satsivi</h3>
+                        <p>Vištienos patiekalas su riešutų padažu</p>
+                        <span class="dish-difficulty">Sudėtingas</span>
+                    </div>
+                </div>
+                
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://via.placeholder.com/300x200/e9ecef/666666?text=Khachapuri" alt="Khachapuri" loading="lazy">
+                    </div>
+                    <div class="dish-info">
+                        <h3>Khachapuri</h3>
+                        <p>Gruzijos pica su sūriu ir kiaušiniu</p>
+                        <span class="dish-difficulty">Lengvas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="schedule section">
+        <div class="container">
+            <h2>Artimiausi mokymai</h2>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <div class="schedule-date">
+                        <span class="day">15</span>
+                        <span class="month">GRU</span>
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Chačapuri Mokymas</h3>
+                        <p>Išmokite gaminti tradicinius gruzinų chačapuri</p>
+                        <span class="schedule-time">18:00 - 21:00</span>
+                        <div class="schedule-price">€55</div>
+                        <a href="/kulinariniai-mokymai/rezervacija" class="btn btn-primary">Rezervuoti</a>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <div class="schedule-date">
+                        <span class="day">22</span>
+                        <span class="month">GRU</span>
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Chinkali Mokymas</h3>
+                        <p>Mokykitės gaminti autentiškus gruzinų koldūnus</p>
+                        <span class="schedule-time">18:00 - 21:00</span>
+                        <div class="schedule-price">€55</div>
+                        <a href="/kulinariniai-mokymai/rezervacija" class="btn btn-primary">Rezervuoti</a>
+                    </div>
+                </div>
+                
+                <div class="schedule-card">
+                    <div class="schedule-date">
+                        <span class="day">29</span>
+                        <span class="month">GRU</span>
+                    </div>
+                    <div class="schedule-info">
+                        <h3>Satsivi Mokymas</h3>
+                        <p>Sudėtingas patiekalas su riešutų padažu</p>
+                        <span class="schedule-time">18:00 - 21:00</span>
+                        <div class="schedule-price">€65</div>
+                        <a href="/kulinariniai-mokymai/rezervacija" class="btn btn-primary">Rezervuoti</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor -->
+    <section class="instructor section section-alt">
+        <div class="container">
+            <h2>Mūsų instruktorė</h2>
+            <div class="instructor-content">
+                <div class="instructor-image">
+                    <img src="https://via.placeholder.com/500x400/f8f9fa/333333?text=Kristina+Instruktorė" alt="Kristina - Kulinarijos instruktorė" loading="lazy">
+                </div>
+                <div class="instructor-info">
+                    <h3>Kristina</h3>
+                    <p>Kristina yra patyrusi kulinarijos instruktorė, kuri specializuojasi gruzinų virtuvėje. Ji išmoko šimtus žmonių gaminti autentiškus gruzinų patiekalus.</p>
+                    <p>Kristina baigė kulinarijos mokyklą Tbilisyje ir turi daugiau nei 10 metų patirties mokydama gruzinų virtuvės tradicijų.</p>
+                    <ul class="instructor-qualifications">
+                        <li>Kulinarijos bakalauras Tbilisio universitete</li>
+                        <li>Certifikuota instruktorė</li>
+                        <li>10+ metų patirtis</li>
+                        <li>Mokė lietuvių ir gruzinų kalbomis</li>
+                    </ul>
+                    <a href="/apie-mus" class="btn btn-outline">Sužinoti daugiau</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <h2>Pradėkite savo kulinarinį kelionę</h2>
+            <p>Rezervuokite vietą artimiausiame mokyme ir išmokite gaminti autentiškus gruzinų patiekalus</p>
+            <div class="cta-buttons">
+                <a href="/kulinariniai-mokymai/rezervacija" class="btn btn-primary">Rezervuoti vietą</a>
+                <a href="/kontaktai" class="btn btn-secondary">Susisiekti</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gruzijos Pasaulis</h3>
+                    <p>Meno ir skonio namai Kaune</p>
+                    <div class="social-links">
+                        <a href="[FACEBOOK_URL]" aria-label="Facebook">📘</a>
+                        <a href="[INSTAGRAM_URL]" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Paslaugos</h4>
+                    <ul>
+                        <li><a href="/kulinariniai-mokymai">Kulinariniai Mokymai</a></li>
+                        <li><a href="/degustacines-vakarienes">Degustacinės Vakarienės</a></li>
+                        <li><a href="/video-pamokos">Video Pamokos</a></li>
+                        <li><a href="/menas">Menas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informacija</h4>
+                    <ul>
+                        <li><a href="/apie-mus">Apie mus</a></li>
+                        <li><a href="/blogas">Blogas</a></li>
+                        <li><a href="/kontaktai">Kontaktai</a></li>
+                        <li><a href="/privacy">Privatumo politika</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontaktai</h4>
+                    <p>K. Donelaičio g. 91<br>Kaunas</p>
+                    <p>+370 618 23103<br>info@gruzijospasaulis.lt</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
