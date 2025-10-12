@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degustacinės Vakarienės - Gruzijos Pasaulis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 250px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #666;
+        }
+        
+        .event-content {
+            padding: 30px;
+        }
+        
+        .event-date {
+            background: #e9ecef;
+            color: #666;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .event-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .event-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .event-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .detail-icon {
+            width: 20px;
+            height: 20px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .event-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .book-button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .menu-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .menu-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .menu-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .menu-category h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .item-name {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .item-description {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .booking-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .booking-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .submit-button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 200px;
+        }
+        
+        .cta-section {
+            background: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-details {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Gruzijos Pasaulis</div>
+                <nav>
+                    <ul>
+                        <li><a href="homepage-layout.html">Pagrindinis</a></li>
+                        <li><a href="about-layout.html">Apie Mus</a></li>
+                        <li><a href="cooking-classes-layout.html">Mokymai</a></li>
+                        <li><a href="e-shop-layout.html">E-parduotuvė</a></li>
+                        <li><a href="contact-layout.html">Kontaktai</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Degustacinės Vakarienės</h1>
+            <p>Patirkite autentišką Gruzijos virtuvės skonį mūsų specialiose degustacinėse vakarienėse</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">🍷</div>
+                    <div class="event-content">
+                        <div class="event-date">2024-02-15</div>
+                        <h3 class="event-title">Gruzijos Vyno Degustacija</h3>
+                        <p class="event-description">Susipažinkite su Gruzijos vyno tradicijomis ir išbandykite 5 skirtingus vynus su autentiškais užkandžiais.</p>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">🕐</div>
+                                <span>19:00 - 22:00</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👥</div>
+                                <span>Iki 20 žmonių</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">📍</div>
+                                <span>Gruzijos Pasaulis</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👨‍🍳</div>
+                                <span>Šefas Giorgi</span>
+                            </div>
+                        </div>
+                        <div class="event-price">45€ asmeniui</div>
+                        <button class="book-button">Rezervuoti</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">🍽️</div>
+                    <div class="event-content">
+                        <div class="event-date">2024-02-22</div>
+                        <h3 class="event-title">Tradicinių Patiekalų Vakarienė</h3>
+                        <p class="event-description">Išbandykite 7 tradicinius Gruzijos patiekalus: nuo chinkali iki khachapuri ir daug daugiau.</p>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">🕐</div>
+                                <span>18:30 - 21:30</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👥</div>
+                                <span>Iki 25 žmonių</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">📍</div>
+                                <span>Gruzijos Pasaulis</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👨‍🍳</div>
+                                <span>Komanda</span>
+                            </div>
+                        </div>
+                        <div class="event-price">55€ asmeniui</div>
+                        <button class="book-button">Rezervuoti</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">🎭</div>
+                    <div class="event-content">
+                        <div class="event-date">2024-03-01</div>
+                        <h3 class="event-title">Kultūros Vakarienė</h3>
+                        <p class="event-description">Kombinuota vakarienė: Gruzijos virtuvė + tradicinė muzika + meno paroda.</p>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">🕐</div>
+                                <span>19:00 - 23:00</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👥</div>
+                                <span>Iki 30 žmonių</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">📍</div>
+                                <span>Gruzijos Pasaulis</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🎵</div>
+                                <span>Gyva muzika</span>
+                            </div>
+                        </div>
+                        <div class="event-price">65€ asmeniui</div>
+                        <button class="book-button">Rezervuoti</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">👨‍👩‍👧‍👦</div>
+                    <div class="event-content">
+                        <div class="event-date">2024-03-08</div>
+                        <h3 class="event-title">Šeimos Vakarienė</h3>
+                        <p class="event-description">Speciali vakarienė šeimoms su vaikais. Interaktyvūs mokymai ir skaniai patiekalai.</p>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">🕐</div>
+                                <span>17:00 - 20:00</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👥</div>
+                                <span>Iki 15 šeimų</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">📍</div>
+                                <span>Gruzijos Pasaulis</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👶</div>
+                                <span>Vaikams</span>
+                            </div>
+                        </div>
+                        <div class="event-price">35€ suaugusiam, 20€ vaikui</div>
+                        <button class="book-button">Rezervuoti</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="menu-section">
+                <h2 class="menu-title">Degustacijos Meniu</h2>
+                <div class="menu-categories">
+                    <div class="menu-category">
+                        <h3>Užkandžiai</h3>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Pkhali</div>
+                                <div class="item-description">Daržovių salotos su orėchais</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Badrijani</div>
+                                <div class="item-description">Baklažanų rulonėliai</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Ispanakhi</div>
+                                <div class="item-description">Špinatų salotos</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-category">
+                        <h3>Pagrindiniai</h3>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Chinkali</div>
+                                <div class="item-description">Tradiciniai koldūnai</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Khachapuri</div>
+                                <div class="item-description">Duona su sūriu</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Mtsvadi</div>
+                                <div class="item-description">Šašlykas</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-category">
+                        <h3>Desertai</h3>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Churchkhela</div>
+                                <div class="item-description">Tradicinis Gruzijos desertas</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Pelamushi</div>
+                                <div class="item-description">Vynuogių desertas</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">Gozinaki</div>
+                                <div class="item-description">Orėchų saldainiai</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="booking-section">
+                <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px; color: #333;">Rezervacijos Forma</h2>
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Vardas ir pavardė</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">El. paštas</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefono numeris</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event">Renginys</label>
+                        <select id="event" name="event" required>
+                            <option value="">Pasirinkite renginį</option>
+                            <option value="wine-tasting">Gruzijos Vyno Degustacija</option>
+                            <option value="traditional-dinner">Tradicinių Patiekalų Vakarienė</option>
+                            <option value="cultural-dinner">Kultūros Vakarienė</option>
+                            <option value="family-dinner">Šeimos Vakarienė</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Data</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Svečių skaičius</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Pasirinkite skaičių</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5+">5 ar daugiau</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="notes">Papildomi komentarai</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Ar turite alergijų, specialių poreikių ar kitų komentarų?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Rezervuoti</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Turite Klausimų?</h2>
+            <p>Susisiekite su mumis ir sužinokite daugiau apie mūsų degustacines vakarienes</p>
+            <a href="contact-layout.html" class="cta-button">Susisiekti</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+        </div>
+    </footer>
+</body>
+</html>

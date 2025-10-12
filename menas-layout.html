@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menas - Gruzijos Pasaulis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .art-categories {
+            background: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active {
+            background: #333;
+            color: white;
+            border-color: #333;
+        }
+        
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .artwork-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .artwork-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .artwork-image {
+            width: 100%;
+            height: 200px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #666;
+        }
+        
+        .artwork-content {
+            padding: 20px;
+        }
+        
+        .artwork-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .artwork-artist {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .artwork-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .artwork-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .view-button {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .buy-button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .featured-exhibition {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        
+        .exhibition-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+        
+        .exhibition-image {
+            height: 400px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            color: #666;
+        }
+        
+        .exhibition-text {
+            padding: 60px;
+        }
+        
+        .exhibition-date {
+            background: #e9ecef;
+            color: #666;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .exhibition-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.3;
+        }
+        
+        .exhibition-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .exhibition-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .detail-icon {
+            width: 20px;
+            height: 20px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .exhibition-button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .artists-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .artists-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .artist-card {
+            text-align: center;
+        }
+        
+        .artist-photo {
+            width: 150px;
+            height: 150px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #666;
+        }
+        
+        .artist-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .artist-specialty {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .artist-bio {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .artist-button {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .events-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .events-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .event-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .event-date {
+            background: #333;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .event-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .event-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .event-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .event-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .event-button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .artwork-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .exhibition-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .exhibition-text {
+                padding: 40px;
+            }
+            
+            .artists-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Gruzijos Pasaulis</div>
+                <nav>
+                    <ul>
+                        <li><a href="homepage-layout.html">Pagrindinis</a></li>
+                        <li><a href="about-layout.html">Apie Mus</a></li>
+                        <li><a href="cooking-classes-layout.html">Mokymai</a></li>
+                        <li><a href="e-shop-layout.html">E-parduotuvė</a></li>
+                        <li><a href="contact-layout.html">Kontaktai</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Menas</h1>
+            <p>Susipažinkite su Gruzijos menininkų kūryba ir įsigykite unikalius meno kūrinius</p>
+        </div>
+    </section>
+
+    <section class="art-categories">
+        <div class="container">
+            <div class="category-buttons">
+                <a href="#" class="category-btn active">Visi kūriniai</a>
+                <a href="#" class="category-btn">Tapyba</a>
+                <a href="#" class="category-btn">Skulptūra</a>
+                <a href="#" class="category-btn">Keramika</a>
+                <a href="#" class="category-btn">Tekstilė</a>
+                <a href="#" class="category-btn">Fotografija</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="featured-exhibition">
+                <div class="exhibition-content">
+                    <div class="exhibition-image">🎨</div>
+                    <div class="exhibition-text">
+                        <div class="exhibition-date">2024-02-20 - 2024-03-20</div>
+                        <h2 class="exhibition-title">"Gruzijos Širdis"</h2>
+                        <p class="exhibition-description">Ekskluzyvi meno paroda, kurioje pristatomi Gruzijos menininkų kūriniai, sukurti specialiai Lietuvos publikai. Parodoje rasite tapybos, skulptūros ir keramikos darbus.</p>
+                        <div class="exhibition-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">📍</div>
+                                <span>Gruzijos Pasaulis, Vilnius</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🕐</div>
+                                <span>10:00 - 18:00</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">👨‍🎨</div>
+                                <span>5 menininkai</span>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🎫</div>
+                                <span>Nemokamai</span>
+                            </div>
+                        </div>
+                        <button class="exhibition-button">Rezervuoti vizitą</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artwork-grid">
+                <div class="artwork-card">
+                    <div class="artwork-image">🖼️</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Tbilisio Senamiestis</h3>
+                        <p class="artwork-artist">Nino Kalandadze</p>
+                        <p class="artwork-price">450€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🏔️</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Kaukazo Kalnai</h3>
+                        <p class="artwork-artist">Giorgi Mchedlishvili</p>
+                        <p class="artwork-price">380€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🍇</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Vynuogių Derlius</h3>
+                        <p class="artwork-artist">David Chkheidze</p>
+                        <p class="artwork-price">320€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🏛️</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Antikinis Tempas</h3>
+                        <p class="artwork-artist">Ketevan Tsiklauri</p>
+                        <p class="artwork-price">520€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🌊</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Juodosios Jūros Bangos</h3>
+                        <p class="artwork-artist">Nino Kalandadze</p>
+                        <p class="artwork-price">410€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🌅</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Rytas Gruzijoje</h3>
+                        <p class="artwork-artist">Giorgi Mchedlishvili</p>
+                        <p class="artwork-price">360€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🏘️</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Kaimo Gyvenimas</h3>
+                        <p class="artwork-artist">David Chkheidze</p>
+                        <p class="artwork-price">290€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">🎭</div>
+                    <div class="artwork-content">
+                        <h3 class="artwork-title">Tradicinis Šokis</h3>
+                        <p class="artwork-artist">Ketevan Tsiklauri</p>
+                        <p class="artwork-price">480€</p>
+                        <div class="artwork-actions">
+                            <a href="#" class="view-button">Peržiūrėti</a>
+                            <button class="buy-button">Pirkti</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="artists-section">
+                <h2 class="artists-title">Mūsų Menininkai</h2>
+                <div class="artists-grid">
+                    <div class="artist-card">
+                        <div class="artist-photo">👩‍🎨</div>
+                        <h3 class="artist-name">Nino Kalandadze</h3>
+                        <p class="artist-specialty">Tapyba ir akvarelė</p>
+                        <p class="artist-bio">Specializuojasi Gruzijos kraštovaizdžio tapyboje. Jos darbai eksponuojami tarptautinėse parodose.</p>
+                        <a href="#" class="artist-button">Peržiūrėti darbus</a>
+                    </div>
+                    <div class="artist-card">
+                        <div class="artist-photo">👨‍🎨</div>
+                        <h3 class="artist-name">Giorgi Mchedlishvili</h3>
+                        <p class="artist-specialty">Skulptūra ir keramika</p>
+                        <p class="artist-bio">Kuria unikalias keramikos skulptūras, įkvėptas Gruzijos kultūros ir tradicijų.</p>
+                        <a href="#" class="artist-button">Peržiūrėti darbus</a>
+                    </div>
+                    <div class="artist-card">
+                        <div class="artist-photo">👨‍🎨</div>
+                        <h3 class="artist-name">David Chkheidze</h3>
+                        <p class="artist-specialty">Fotografija ir tapyba</p>
+                        <p class="artist-bio">Fotografuoja ir piešia Gruzijos kasdienybę, kurdamas autentišką šalies vaizdą.</p>
+                        <a href="#" class="artist-button">Peržiūrėti darbus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="events-section">
+                <h2 class="events-title">Artimiausi Renginiai</h2>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">2024-02-25</div>
+                        <h3 class="event-title">Menininkų Susitikimas</h3>
+                        <p class="event-description">Susipažinkite su menininkais ir sužinokite apie jų kūrybos procesą. Galėsite užduoti klausimus ir pamatyti, kaip kuriami meno kūriniai.</p>
+                        <div class="event-details">
+                            <div class="event-location">
+                                <span>📍</span>
+                                <span>Gruzijos Pasaulis</span>
+                            </div>
+                            <div class="event-price">Nemokamai</div>
+                        </div>
+                        <button class="event-button">Rezervuoti</button>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">2024-03-05</div>
+                        <h3 class="event-title">Keramikos Mokymai</h3>
+                        <p class="event-description">Išmokite gaminti tradicinę Gruzijos keramiką. Mokymai vyks profesionalaus menininko vedimu.</p>
+                        <div class="event-details">
+                            <div class="event-location">
+                                <span>📍</span>
+                                <span>Gruzijos Pasaulis</span>
+                            </div>
+                            <div class="event-price">45€</div>
+                        </div>
+                        <button class="event-button">Rezervuoti</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apie Mus - Gruzijos Pasaulis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: #f8f9fa;
+        }
+        
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .content-text h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .content-text p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .content-image {
+            text-align: center;
+        }
+        
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .team-member {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #666;
+        }
+        
+        .team-member h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .team-member p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .value-item {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .value-item h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .value-item p {
+            color: #666;
+            text-align: center;
+        }
+        
+        .cta-section {
+            background: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Gruzijos Pasaulis</div>
+                <nav>
+                    <ul>
+                        <li><a href="homepage-layout.html">Pagrindinis</a></li>
+                        <li><a href="about-layout.html">Apie Mus</a></li>
+                        <li><a href="cooking-classes-layout.html">Mokymai</a></li>
+                        <li><a href="e-shop-layout.html">E-parduotuvė</a></li>
+                        <li><a href="contact-layout.html">Kontaktai</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Apie Mus</h1>
+            <p>Susipažinkite su Gruzijos Pasaulio komanda ir mūsų misija</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>Mūsų Istorija</h2>
+                    <p>Gruzijos Pasaulis gimė iš meilės Gruzijos kultūrai, virtuvei ir menui. Nuo 2015 metų mes dalinamės šios nuostabios šalies tradicijomis su Lietuvos gyventojais.</p>
+                    <p>Mūsų kelionė prasidėjo nuo nedidelės virtuvės studijos, kurioje mokėme lietuvius gaminti autentiškus gruzinų patiekalus. Šiandien mes esame pilnavertis kultūros centras, siūlantis ne tik kulinarinius mokymus, bet ir meno parodas, degustacines vakarienes ir daug daugiau.</p>
+                </div>
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/500x400/f8f9fa/333333?text=Mūsų+Istorija" alt="Gruzijos Pasaulio istorija" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/500x400/f8f9fa/333333?text=Mūsų+Misija" alt="Mūsų misija" loading="lazy">
+                </div>
+                <div class="content-text">
+                    <h2>Mūsų Misija</h2>
+                    <p>Mes siekiame suartinti Lietuvą ir Gruziją per kultūrą, virtuvę ir meną. Mūsų tikslas - parodyti, kad šios dvi šalys turi daug bendro ir gali puikiai papildyti viena kitą.</p>
+                    <p>Per savo veiklą mes skatiname kultūrinį mainą, mokome autentiškų tradicijų ir kuriame vietą, kur žmonės gali susipažinti su Gruzijos kultūros gausa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 36px; margin-bottom: 60px; color: #333;">Mūsų Komanda</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">👨‍🍳</div>
+                    <h3>Giorgi</h3>
+                    <p>Vyriausias šefas ir įkūrėjas</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">👩‍🎨</div>
+                    <h3>Nino</h3>
+                    <p>Meno kuratorė ir kultūros koordinatorė</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">👨‍💼</div>
+                    <h3>David</h3>
+                    <p>Projektų vadovas ir komunikacijos specialistas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 36px; margin-bottom: 60px; color: #333;">Mūsų Vertybės</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">AUTHENTICITY</div>
+                    <h3>Autentiškumas</h3>
+                    <p>Mes dalinamės tikromis Gruzijos tradicijomis ir receptais, perduodamais iš kartos į kartą.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">QUALITY</div>
+                    <h3>Kokybė</h3>
+                    <p>Visos mūsų paslaugos ir produktai atitinka aukščiausius kokybės standartus.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">COMMUNITY</div>
+                    <h3>Bendruomenė</h3>
+                    <p>Kuriame šiltą ir draugišką aplinką, kur žmonės gali susipažinti ir dalintis patirtimi.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">INNOVATION</div>
+                    <h3>Inovacijos</h3>
+                    <p>Deriname tradicijas su moderniais metodais, kad paslaugos būtų aktualios ir patrauklios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Norite Sužinoti Daugiau?</h2>
+            <p>Susisiekite su mumis ir sužinokite, kaip galime padėti jums atrasti Gruzijos kultūros gausą</p>
+            <a href="contact-layout.html" class="cta-button">Susisiekti</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gruzijos Pasaulis. Visos teisės saugomos.</p>
+        </div>
+    </footer>
+</body>
+</html>
